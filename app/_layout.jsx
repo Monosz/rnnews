@@ -1,21 +1,24 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Stack } from "expo-router";
 import "../global.css";
 
-export default function App() {
+const RootLayout = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack>
+      <Stack.Screen
+        name="index"
+        options={{
+          headerShown: true,
+          headerTitle: "rnNews",
+          headerStyle: { backgroundColor: "slategray" },
+          headerTitleStyle: {
+            color: "white",
+            fontSize: 24,
+            fontWeight: "bold",
+          },
+        }}
+      />
+    </Stack>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default RootLayout;
